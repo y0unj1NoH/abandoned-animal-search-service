@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="common.js" type="module" defer></script>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9a32c47eaed2651704ecb497c1010929&autoload=false&libraries=services"
+      defer
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="dongle-bold"><a href="#">데려가냥?</a></h1>
+      <nav id="gnb" class="dongle-regular">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#sec1">입양 급구</a></li>
+          <li><a href="#sec2">전체 보기</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="banner">
+      <div id="banner-content">
+        <h2 class="dongle-bold">
+          <span
+            >One more friend <br />
+            Thousands more fun!</span
+          >
+        </h2>
+        <div id="img-con"><img src="./src/puppyLogo.svg" alt="" /></div>
+      </div>
+    </section>
+
+    <section id="sec1">
+      <h2 class="dongle-bold">빨리 찾아가세요!</h2>
+      <div class="mw">
+        <ul id="list-con" class="list-con noto-sans-kr"></ul>
+        <ul id="list-con1" class="list-con noto-sans-kr">
+          <!-- <li class="card">
+            <div class="card-img">
+              <img
+                src="https://www.animal.go.kr/files/shelter/2024/08/202408120208454.jpg"
+                alt="프로필 이미지"
+              />
+            </div>
+            <div class="card-text">
+              <div class="card-header">
+                <span class="kindCd"
+                  >시고르자브종<i class="fa-solid fa-venus sexCd"></i
+                ></span>
+                <span class="happenDt">24.08.11</span>
+              </div>
+              <p class="noticeNo">전남-나주-2024-01003</p>
+              <p class="careAddr">
+                <i class="fa-solid fa-location-dot"></i>전라남도 나주시 산포면
+              </p>
+              <p class="noticeDt">
+                <i class="fa-regular fa-calendar"></i>2024.08.08~2024.08.08
+              </p>
+            </div>
+            <a href="#">자세히보기</a>
+          </li> -->
+        </ul>
+        <div id="pagination">
+          <!-- <button class="prev">이전</button>
+          <button class="on">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button class="next">다음</button> -->
+        </div>
+      </div>
+    </section>
+
+    <section id="sec2">
+      <h2 class="dongle-bold">많은 친구들이 엄마 아빠를 구해요!</h2>
+      <div class="mw">
+        <div id="dropdown-menu">
+          <select id="sido" class="noto-sans-kr" name="sido">
+            <option value="none">시/도 선택</option>
+          </select>
+          <select id="sigungu" class="noto-sans-kr" name="sigungu">
+            <option value="none">시/군/구 선택</option>
+          </select>
+          <select id="up-kind" class="noto-sans-kr" name="up-kind">
+            <option value="none">축종 선택</option>
+          </select>
+          <select id="kind" class="noto-sans-kr" name="kind">
+            <option value="none">품종 선택</option>
+          </select>
+          <button id="search-btn" class="noto-sans-kr">검색</button>
+        </div>
+        <ul id="list-con2" class="list-con noto-sans-kr"></ul>
+      </div>
+    </section>
+
+    <section id="modal">
+      <h2 hidden>자세히보기 모달창</h2>
+      <div id="modal-content">
+        <button id="close-btn" class="btn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div id="modal-layout">
+          <div id="modal-img">
+            모달 이미지
+            <!-- <img
+              src="https://www.animal.go.kr/files/shelter/2024/08/202408120208454.jpg"
+              alt="프로필 이미지"
+            /> -->
+          </div>
+          <div>
+            <div id="modal-text" class="noto-sans-kr">
+              모달 텍스트
+              <!-- <p id="modal-noticeNo">전남-나주-2024-01003</p>
+              <p id="modal-kindCd">
+                시고르자브종<i class="fa-solid fa-venus sexCd"></i>
+              </p>
+              <p id="modal-noticeDt">
+                <i class="fa-regular fa-calendar"></i>2024.08.08~2024.08.08
+              </p> -->
+            </div>
+            <table id="modal-table" class="noto-sans-kr">
+              <tbody>
+                <tr>
+                  <td>발견날짜</td>
+                  <td id="modal-happenDt">Row 7, Column 2</td>
+                </tr>
+                <tr>
+                  <td>발견장소</td>
+                  <td id="modal-happenPlace">Row 7, Column 2</td>
+                </tr>
+                <!-- <tr >
+                    <td>품종</td>
+                    <td class="kindCd">Row 1, Column 2</td>
+                  </tr> -->
+                <tr>
+                  <td>색상</td>
+                  <td id="modal-colorCd">Row 4, Column 2</td>
+                </tr>
+                <tr>
+                  <td>나이</td>
+                  <td id="modal-age">Row 3, Column 2</td>
+                </tr>
+                <tr>
+                  <td>체중</td>
+                  <td id="modal-weight">Row 5, Column 2</td>
+                </tr>
+                <tr>
+                  <td>상태</td>
+                  <td id="modal-processState">Row 6, Column 2</td>
+                </tr>
+                <!-- <tr>
+                    <td>성별</td>
+                    <td class="sexCd">Row 2, Column 2</td>
+                  </tr> -->
+                <tr>
+                  <td>중성화 여부</td>
+                  <td id="modal-neuterYn">Row 12, Column 2</td>
+                </tr>
+                <tr>
+                  <td>특징</td>
+                  <td id="modal-specialMark">Row 12, Column 2</td>
+                </tr>
+                <tr>
+                  <td>보호소 이름</td>
+                  <td id="modal-careNm">Row 8, Column 2</td>
+                </tr>
+                <tr>
+                  <td>보호소 전화번호</td>
+                  <td id="modal-careTel">Row 10, Column 2</td>
+                </tr>
+                <tr>
+                  <td>보호장소</td>
+                  <td id="modal-careAddr">Row 9, Column 2</td>
+                </tr>
+                <tr>
+                  <td>담당자</td>
+                  <td id="modal-chargeNm">Row 11, Column 2</td>
+                </tr>
+                <tr>
+                  <td>담당자 전화번호</td>
+                  <td id="modal-officetel">Row 12, Column 2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="modal-map">카카오 지도</div>
+      </div>
+    </section>
+  </body>
+</html>
